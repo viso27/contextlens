@@ -1,0 +1,15 @@
+# Secrets & Credentials
+.env
+*.env
+
+# Python / Virtual Environment
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Node / Frontend Build
+node_modules/
+dist/
+build/
+.DS_Store
