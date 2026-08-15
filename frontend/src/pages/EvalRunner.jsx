@@ -10,7 +10,7 @@ export default function EvalRunner() {
 
   useEffect(() => {
     // Fetch registered tables for dropdown selection
-    axios.get('http://localhost:8000/api/metadata/')
+    axios.get('https://contextlens-abus.onrender.com/api/metadata/')
       .then(res => setTables(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -19,8 +19,8 @@ export default function EvalRunner() {
     setLoading(true);
     try {
       const url = selectedTable === 'all'
-        ? 'http://localhost:8000/api/evals/run'
-        : `http://localhost:8000/api/evals/run?table_name=${encodeURIComponent(selectedTable)}`;
+        ? 'https://contextlens-abus.onrender.com/api/evals/run'
+        : `https://contextlens-abus.onrender.com/api/evals/run?table_name=${encodeURIComponent(selectedTable)}`;
       
       const res = await axios.post(url);
       setEvalResults(res.data);
