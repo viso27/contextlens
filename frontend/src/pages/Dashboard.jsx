@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   const fetchMetadata = () => {
     setLoading(true);
-    axios.get('http://localhost:8000/api/metadata/')
+    axios.get('https://contextlens-abus.onrender.com/api/metadata/')
       .then(res => {
         setTables(res.data);
         setLoading(false);
@@ -24,7 +24,7 @@ export default function Dashboard() {
   const handleDeleteTable = async (tableName) => {
     if (!window.confirm(`Are you sure you want to delete table '${tableName}'?`)) return;
     try {
-      await axios.delete(`http://localhost:8000/api/metadata/${tableName}`);
+      await axios.delete(`https://contextlens-abus.onrender.com/api/metadata/${tableName}`);
       fetchMetadata();
     } catch (err) {
       alert("Failed to delete table.");
