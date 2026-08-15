@@ -54,7 +54,7 @@ export default function AddSchemaModal({ isOpen, onClose, onSuccess }) {
     };
 
     try {
-      await axios.post('http://localhost:8000/api/metadata/', payload);
+      await axios.post('https://contextlens-abus.onrender.com/api/metadata/', payload);
       onSuccess();
       onClose();
     } catch (err) {
