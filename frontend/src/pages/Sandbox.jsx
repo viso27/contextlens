@@ -11,7 +11,7 @@ export default function Sandbox() {
 
   useEffect(() => {
     // Fetch available tables for dropdown targeting
-    axios.get('http://localhost:8000/api/metadata/')
+    axios.get('https://contextlens-abus.onrender.com/api/metadata/')
       .then(res => setTables(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -22,7 +22,7 @@ export default function Sandbox() {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:8000/api/sandbox/query', {
+      const res = await axios.post('https://contextlens-abus.onrender.com/api/sandbox/query', {
         prompt: prompt,
         table_name: selectedTable
       });
